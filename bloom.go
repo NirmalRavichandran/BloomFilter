@@ -1,7 +1,15 @@
 package bloom
 
-import "fmt"
+type bloomFilter struct {
+	// Yet to add fields
+}
 
-func main() {
-	fmt.Println("This is an implementation of BloomFilter")
+func NewBloomFilter() *bloomFilter {
+	return &bloomFilter{}
+}
+
+func (bf *bloomFilter) Add(element []byte) {}
+
+func (bf *bloomFilter) Check(element []byte) bool {
+	return false
 }
