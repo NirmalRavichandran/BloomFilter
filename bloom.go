@@ -1,7 +1,13 @@
 package bloom
 
+import "hash"
+
 type bloomFilter struct {
-	// Yet to add fields
+	bitMap []uint32
+	k      int
+	m      int
+	n      int
+	hashfn hash.Hash64
 }
 
 func NewBloomFilter() *bloomFilter {
