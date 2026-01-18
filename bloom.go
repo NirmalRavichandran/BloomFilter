@@ -2,6 +2,7 @@ package bloom
 
 import (
 	"hash"
+	"hash/fnv"
 )
 
 type bloomFilter struct {
@@ -17,6 +18,7 @@ func NewBloomFilter(noHashes, filterSize int) *bloomFilter {
 	bf.bitMap = make([]bool, filterSize)
 	bf.k = noHashes
 	bf.m = filterSize
+	bf.hashfn = fnv.New64a()
 	bf.n = 0 // initial value before adding any element
 	return bf
 }
